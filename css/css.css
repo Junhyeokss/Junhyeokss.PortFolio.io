@@ -41,10 +41,10 @@
 }
 
 .mopen.on button::before {
-  transform: translate(0, -50%) rotate(45degree);
+  transform: rotate(45deg);
 }
 .mopen.on button::after {
-  transform: translate(0, -50%) rotate(45degree);
+  transform: rotate(-45deg);
 }
 
 .mopen::before {
