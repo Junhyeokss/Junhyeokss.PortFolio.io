@@ -1,20 +1,105 @@
-.gnb {
-  position: fixed;
-  inset: 50% 50px auto auto;
-  transform: translate(0, -50%);
-  z-index: 999;
+.inner {
+  display: flex;
+  gap: 100px;
+  width: 1600px;
+  margin: 0 auto;
+  min-height: 400px;
+}
+
+.inner > * {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slogan {
+  font-family: "Gamja Flower";
+  font-size: 100px;
+}
+
+.section .content {
+  background: tomato;
+  transform: translate(-300px, 0);
+  overflow: hidden;
+  height: 400px;
+  opacity: 0;
+  align-items: flex-start;
+}
+
+.section.on .content {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.section.on .content .case {
+  transform: translate(0, 0);
+}
+
+.section .content .case {
+  transform: translate(0, 0);
+  transition: 2s;
+}
+.section .content:hover .case {
+  transform: translate(0, calc(-350px));
+}
+
+.section .descrption {
+  background: tan;
+  transform: translate(500px, 0);
+  transition: 0.5s 1s;
+  opacity: 0;
+}
+
+.section.on .descrption {
+  transform: translate(0, 0);
+
+  opacity: 1;
 }
 
 .header {
   position: fixed;
   inset: 50px auto auto 50px;
-  z-index: 999;
+  z-index: 9999;
+  transition: 1s;
 }
 
-.toTop {
+.header.on {
+  color: #f7f7f7;
+  z-index: 9999;
+}
+
+.gnb {
   position: fixed;
-  inset: auto 50px 50px auto;
+  inset: 50% 50px auto auto;
+  transform: translate(0, -40px);
   z-index: 999;
+  width: 100px;
+}
+
+.gnb li {
+  font-size: 0;
+}
+
+.gnb li a {
+  position: relative;
+  display: block;
+  height: 10px;
+  margin: 5px 0;
+}
+
+.gnb li a::before {
+  content: "";
+  position: absolute;
+  inset: 50% 0 auto auto;
+  height: 1px;
+  width: 30px;
+  background: #333;
+}
+
+.gnb li.on a::before {
+  width: 50px;
+  transition: 0.5s;
 }
 
 .mopen {
@@ -79,4 +164,29 @@
   transform: translate(0, -50%);
   background: #333;
   height: 2px;
+}
+
+.cover {
+  /* display: none; */
+  position: fixed;
+  background: #333;
+  inset: 0 0 0 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ddd;
+  height: 0;
+  transition: 1s;
+  overflow: hidden;
+}
+
+.cover.on {
+  height: 100vh;
+}
+
+.toTop {
+  position: fixed;
+  inset: auto 50px 50px auto;
+  z-index: 997;
 }
